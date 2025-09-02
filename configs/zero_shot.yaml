@@ -1,0 +1,127 @@
+#global constants for all zero shot experiments
+global:
+  dataset_path : /home2/tathagato/summarization/MACSUM/dataset/macdoc/test_dataset.json
+  load_in_4bit : True 
+  bnb_4bit_quant_type : "nf4"
+  bnb_4bit_compute_dtype : "bfloat16"
+  bnb_4bit_use_double_quant : False
+  device : "cuda:0"
+  rank : 32
+  lora_alpha : 16
+  lora_dropout : 0.1
+  target_modules : ['k_proj', 'v_proj', 'q_proj', 'up_proj', 'down_proj', 'gate_proj']
+  top_p : 0.95
+  top_k : 50
+  max_new_tokens : 500
+  num_return_sequences : 1
+  do_sample : True
+  output_dir : /scratch/tathagato/naacl/zero_shot
+  max_seq_len : 2048
+  batch_size : 1
+
+experiments :
+  # llama_length:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['length']
+  #   model_type : llama
+
+  llama_extractiveness:
+    model_id : akjindal53244/Llama-3.1-Storm-8B
+    attributes : ['extractiveness']
+    model_type : llama
+
+  # llama_topic:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['topic']
+  #   model_type : llama
+
+  # llama_specificity:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['specificity']
+  #   model_type : llama
+
+  llama_length_and_extractiveness:
+    model_id : akjindal53244/Llama-3.1-Storm-8B
+    attributes : ['length', 'extractiveness']
+    model_type : llama
+
+  llama_length_and_topic:
+    model_id : akjindal53244/Llama-3.1-Storm-8B
+    attributes : ['length', 'topic']
+    model_type : llama
+  
+  # llama_length_and_specificity:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['length', 'specificity']
+  #   model_type : llama
+
+  llama_topic_and_extractiveness:
+    model_id : akjindal53244/Llama-3.1-Storm-8B
+    attributes : ['topic', 'extractiveness']
+    model_type : llama
+  
+  # llama_topic_and_specificity:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['topic', 'specificity']
+  #   model_type : llama
+  
+  # llama_extractiveness_and_specificity:
+  #   model_id : akjindal53244/Llama-3.1-Storm-8B
+  #   attributes : ['extractiveness', 'specificity']
+  #   model_type : llama
+
+  # mistral_length:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['length']
+  #   model_type : mistral
+
+  # mistral_extractiveness:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['extractiveness']
+  #   model_type : mistral
+  
+  # mistral_topic:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['topic']
+  #   model_type : mistral
+
+  # mistral_specificity:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['specificity']
+  #   model_type : mistral
+  
+  # mistral_length_and_extractiveness:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['length', 'extractiveness']
+  #   model_type : mistral
+  
+  # mistral_length_and_topic:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['length', 'topic']
+  #   model_type : mistral
+  
+  # mistral_length_and_specificity:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['length', 'specificity']
+  #   model_type : mistral
+  
+  # mistral_topic_and_extractiveness:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['topic', 'extractiveness']
+  #   model_type : mistral
+  
+  # mistral_topic_and_specificity:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['topic', 'specificity']
+  #   model_type : mistral
+  
+  # mistral_extractiveness_and_specificity:
+  #   model_id : mistralai/Mistral-7B-Instruct-v0.3
+  #   attributes : ['extractiveness', 'specificity']
+  #   model_type : mistral
+
+  
+
+
+
+
