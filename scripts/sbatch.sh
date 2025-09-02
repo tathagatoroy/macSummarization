@@ -23,7 +23,8 @@ export NCCL_P2P_DISABLE=1
 # echo "done second part"
 # python run_all_weighted_adapter_fusion_dpo.py
 
-HUGGINGFACE_TOKEN="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"
+## add your huggingface token here 
+
 
 # Perform the login using the token
 # TEMP_FILE=$(mktemp)
